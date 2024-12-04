@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arbitrage Platform Configuration</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100">
+    <div class="container mx-auto px-4 py-8">
+        <h1 class="text-3xl font-bold mb-8">Platform Configuration</h1>
+
+        <!-- Exchange Configuration -->
+        <div class="bg-white rounded-lg shadow-md p-6 mb-8">
+            <h2 class="text-xl font-semibold mb-4">Exchange Configuration</h2>
+            <form id="exchangeConfig" class="space-y-4">
+                <!-- Binance -->
+                <div class="border-b pb-4">
+                    <h3 class="font-medium mb-2">Binance</h3>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700">API Key</label>
+                            <input type="text" name="binance_api_key" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm">
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700">API Secret</label>
+                            <input type="password" name="binance_api_secret" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Bybit -->
+                <div class="border-b pb-4">
+                    <h3 class="font-medium mb-2">Bybit</h3>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700">API Key</label>
+                            <input type="text" name="bybit_api_key" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm">
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700">API Secret</label>
+                            <input type="password" name="bybit_api_secret" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm">
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+
+        <!-- Trading Configuration -->
+        <div class="bg-white rounded-lg shadow-md p-6 mb-8">
+            <h2 class="text-xl font-semibold mb-4">Trading Configuration</h2>
+            <form id="tradingConfig" class="space-y-4">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700">Minimum Profit Threshold (%)</label>
+                        <input type="number" name="min_profit" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm" value="0.5">
+                    </div>
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700">Maximum Trade Amount (USD)</label>
+                        <input type="number" name="max_trade_amount" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm" value="1000">
+                    </div>
+                </div>
+            </form>
+        </div>
+
+        <!-- Risk Management -->
+        <div class="bg-white rounded-lg shadow-md p-6 mb-8">
+            <h2 class="text-xl font-semibold mb-4">Risk Management</h2>
+            <form id="riskConfig" class="space-y-4">
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700">Risk Level</label>
+                        <select name="risk_level" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm">
+                            <option value="low">Low</option>
+                            <option value="medium">Medium</option>
+                            <option value="high">High</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700">Max Daily Loss (%)</label>
+                        <input type="number" name="max_daily_loss" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm" value="5">
+                    </div>
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700">Stop Loss (%)</label>
+                        <input type="number" name="stop_loss" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm" value="2">
+                    </div>
+                </div>
+            </form>
+        </div>
+
+        <!-- Save Button -->
+        <div class="flex justify-end">
+            <button onclick="saveConfig()" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
+                Save Configuration
+            </button>
+        </div>
+    </div>
+
+    <script src="/static/js/config.js"></script>
+</body>
+</html>
